@@ -6,31 +6,21 @@ for i in range (0,9):
 
 print(array)
 
-
-sliceInit = 0
 arrayCounter = 0
-sliceEnd = 0
 
+#find first cap
+for i in range (0,stringLength):
+    if camelCase[i].isupper():
+        sliceInit = i
+        break
 
-while sliceEnd <= stringLength:
-    if camelCase[sliceEnd].isupper():
+for i in range (sliceInit,stringLength):
+    if camelCase[i].isupper() or i == stringLength:
+        sliceEnd = i
+        array[arrayCounter] = camelCase[sliceInit:sliceEnd]
         sliceInit = sliceEnd
+        arrayCounter += 1
 
-        print(sliceEnd)
-        print(stringLength)
-        for i in range (sliceEnd, stringLength):
-            if camelCase[sliceEnd].isupper() or sliceEnd >= stringLength:
-                print("meow")
-                print(camelCase[sliceInit:sliceEnd])
-                array[arrayCounter] = camelCase[sliceInit:sliceEnd]
-                arrayCounter += 1
-                sliceInit = sliceEnd
-                break
-
-
-    else:
-        sliceEnd += 1
-
-
+        print(array)
 
 
