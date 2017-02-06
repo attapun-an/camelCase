@@ -1,5 +1,5 @@
-# camelCase = "ThisIsACamelCaseString"
-camelCase = input("Input camel case: ")
+camelCase = "ThisIsACamelCaseString"
+# camelCase = input("Input camel case: ")
 stringLength = len(camelCase)
 print(stringLength)
 array = []
@@ -29,6 +29,23 @@ for i in range (sliceInit+1,stringLength):
         array[arrayCounter] = camelCase[sliceInit:sliceEnd]
 
 print(array)
+
+
+# Task 3.5 Formatting
+newArray = []
+
+for i in range (0,10):
+    if array[i] != "None":
+        newArray.append(array[i])
+
+print (newArray)
+
+Output = " ".join(newArray)
+
+print(Output)
+
+
+
 
 
 
