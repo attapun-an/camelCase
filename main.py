@@ -1,28 +1,36 @@
 camelCase = "ThisIsACameCaseString"
-length = len(camelCase)
+stringLength = len(camelCase)
 array = []
 for i in range (0,9):
     array.append("None")
 
 print(array)
 
-#find start letter:
-for i in range (0, length):
-    if camelCase[i].isupper():
-        startIndex = i
-        break
 
+sliceInit = 0
 arrayCounter = 0
+sliceEnd = 0
 
 
+while sliceEnd <= stringLength:
+    if camelCase[sliceEnd].isupper():
+        sliceInit = sliceEnd
 
-for i in range (startIndex, length):
-    if camelCase[i].isupper:
-        startIndex = i
-        for i in range(startIndex, length):
-            if camelCase[i].isupper:
-                sliceIndex = i
-                array[arrayCounter] = camelCase[startIndex:sliceIndex]
+        print(sliceEnd)
+        print(stringLength)
+        for i in range (sliceEnd, stringLength):
+            if camelCase[sliceEnd].isupper() or sliceEnd >= stringLength:
+                print("meow")
+                print(camelCase[sliceInit:sliceEnd])
+                array[arrayCounter] = camelCase[sliceInit:sliceEnd]
                 arrayCounter += 1
-                print(array)
-                startIndex = sliceIndex
+                sliceInit = sliceEnd
+                break
+
+
+    else:
+        sliceEnd += 1
+
+
+
+
