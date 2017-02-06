@@ -1,4 +1,5 @@
-camelCase = "ThisIsACameCaseString"
+# camelCase = "ThisIsACamelCaseString"
+camelCase = input("Input camel case: ")
 stringLength = len(camelCase)
 print(stringLength)
 array = []
@@ -7,15 +8,13 @@ array = []
 for i in range (0,10):
     array.append("None")
 
-print(array)
-
 arrayCounter = 0
 
 #find first cap
 for i in range (0,stringLength+1):
     if camelCase[i].isupper():
         # to ensure the first letter is not included
-        sliceInit = i 
+        sliceInit = i
         break
 
 for i in range (sliceInit+1,stringLength):
@@ -25,8 +24,12 @@ for i in range (sliceInit+1,stringLength):
         sliceInit = sliceEnd
         arrayCounter += 1
 
-        print(array)
-        print(i)
+    elif i == stringLength-1:
+        sliceEnd = i+1
+        array[arrayCounter] = camelCase[sliceInit:sliceEnd]
+
+print(array)
+
 
 
 
